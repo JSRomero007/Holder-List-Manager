@@ -1,0 +1,129 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"] - Board-Harness Reference</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css">
+    <style>
+        .full-screen-background {
+            background: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="full-screen-background">
+        <div class="content text-center">
+            <h1 class="display-4"><i class="fas fa-eraser"></i>Board-Harness Reference</h1>
+        </div>
+
+        <div class="container mt-2 mt-3">
+            <!-- Toolbar with action buttons -->
+            <div class="mb-3 col-auto">
+                <button type="button" class="btn btn-outline-secondary me-1" onclick="clearForm()"><i class="bi bi-arrow-counterclockwise"></i> Clear</button>
+                <button type="button" class="btn btn-outline-secondary" onclick="saveData()"><i class="bi bi-arrow-counterclockwise"></i> Save</button>
+            </div>
+
+            <!-- Search input with button -->
+            <div class="input-group mb-3">
+                <div class="col-auto">
+                    <label for="codeSearch" class="visually-hidden">Code</label>
+                    <input type="text" class="form-control" id="codeSearch" placeholder="Code">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-primary mb-3" onclick="searchData()"><i class="fas fa-search"></i> Search</button>
+                </div>
+            </div>
+
+            <!-- Secondary prompt -->
+            <p>Enter a part number or file name:</p>
+
+            <!-- Button to add new rows -->
+            <div class="input-group mb-3">
+                <div class="col-auto">
+                    <label for="partNumber" class="visually-hidden">Code</label>
+                    <input type="text" class="form-control" id="partNumber" placeholder="Code">
+                </div>
+                <div class="col-auto">
+                    <button type="button" class="btn btn-warning mb-3" onclick="addRow()"><i class="fas fa-plus"></i> Add</button>
+                </div>
+            </div>
+
+            <!-- Table -->
+            <div class="table-responsive">
+                <table class="table" id="dataTable">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Part Number</th>
+                            <th scope="col">Revision</th>
+                            <th scope="col">Construction order</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Estate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Rows will be dynamically inserted here -->
+                        <tr>
+                            <td colspan="6" class="text-center">Data not found</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Initialize DataTable
+            $('#dataTable').DataTable();
+
+            // Initialize autocomplete
+            $("#partNumber").autocomplete({
+                source: function (request, response) {
+                    $.ajax({
+                        url: '/path/to/your/autocomplete/api',
+                        dataType: 'json',
+                        data: {
+                            term: request.term
+                        },
+                        success: function (data) {
+                            response(data);
+                        }
+                    });
+                },
+                minLength: 3
+            });
+        });
+
+        function clearForm() {
+            document.querySelectorAll('input[type="text"]').forEach(element => element.value = '');
+        }
+
+        function saveData() {
+            // Implement your save functionality here
+            alert("Save functionality not implemented yet.");
+        }
+
+        function searchData() {
+            // Implement your search functionality here
+            alert("Search functionality not implemented yet.");
+        }
+
+        function addRow() {
+            // Implement your add row functionality here
+            alert("Add row functionality not implemented yet.");
+        }
+    </script>
+
+</body>
+</html>

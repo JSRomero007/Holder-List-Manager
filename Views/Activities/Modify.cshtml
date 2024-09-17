@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <div class="full-screen-background">
+        <div class="content text-center">
+        <h1 class="display-4"><i class="fas fa-edit"></i>Modify item list</h1>
+        </div>
+
+    <div class="container mt-5">
+        <!-- Clear Button - Alineación central y espaciado uniforme -->
+        <div class="mb-3 d-flex justify-content-center">
+            <div class="btn-group mr-3" role="group" aria-label="Acciones">
+                <button type="button" class="btn btn-outline-secondary mr-1" onclick="clearForm()"><i class="fas fa-eraser"></i> Clear</button>
+                <button type="button" class="btn btn-secondary mr-1"><i class="fas fa-save"></i> Save</button>
+                <button type="button" class="btn btn-secondary">  <i class="fas fa-user-cog"></i> Asistente</button>
+            </div>
+            <!-- Botones adicionales con margen uniforme -->
+            <button type="button" class="btn btn-outline-secondary ml-2 mr-2"><i class="fas fa-hand-pointer"></i> Seleccionar Clips</button>
+            <button type="button" class="btn btn-warning mr-2">  <i class="fas fa-trash-alt"></i> Eliminar grupos</button>
+            <button type="button" class="btn btn-warning"><i class="fas fa-eraser"></i> Limpiar revisión</button>
+        </div>
+
+        <!-- Form Row -->
+        <div class="form-row justify-content-center">
+            <div class="col-auto">
+                <label for="partNumber" class="visually-hidden">Codigo</label>
+                <input type="text" class="form-control" id="partNumber" placeholder="Codigo">
+            </div>
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3"><i class="fas fa-search"></i> Buscar</button>
+            </div>
+            <div class="custom-control custom-checkbox mr-3 justify-content-around">
+                <input type="checkbox" class="custom-control-input" id="customCheck1">
+                <label class="custom-control-label" for="customCheck1">Incluir sufijo en POS_NBR</label>
+            </div>
+            <div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    <label class="btn btn-outline-secondary active">
+                        <input type="radio" name="options" id="option1" autocomplete="off" checked><i class="fas fa-signal"></i> Hight
+                    </label>
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="options" id="option2" autocomplete="off">  <i class="fas fa-signal" style="opacity: 0.66;"></i> Medium
+                    </label>
+                    <label class="btn btn-outline-secondary">
+                        <input type="radio" name="options" id="option3" autocomplete="off"> <i class="fas fa-signal" style="opacity: 0.33;"></i> Low
+                    </label>
+                </div>
+            </div>
+        </div>
+
+      
+        <!-- Table -->
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Archivo</th>
+                    <th scope="col">Número de parte</th>
+                    <th scope="col">Rev</th>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Nombre completo</th>
+                    <th scope="col">BOM</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Table data would be inserted here -->
+                <tr>
+                    <td colspan="8" class="text-center">Sin datos para mostrar</td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+
+    <!-- Link to Bootstrap JS and Popper.js -->
+ 
+    <script>
+        function clearForm() {
+
+            document.querySelectorAll('input[type="text"], textarea').forEach(element => element.value = '');
+            document.querySelectorAll('select').forEach(element => element.selectedIndex = 0);
+            document.querySelectorAll('input[type="checkbox"]').forEach(element => element.checked = false);
+            document.querySelectorAll('input[type="radio"]').forEach(element => element.checked = false);
+        }
+    </script>
+    </div>

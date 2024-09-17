@@ -1,0 +1,84 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="full-screen-background">
+    <div class="content text-center">
+        <h1 class="display-4"><i class="fas fa-plus"></i> Create tools file</h1>
+    </div>
+    <div class="container mt-5">
+        <!-- Clear Button -->
+        <div class="mb-3">
+            <button type="button" class="btn btn-outline-secondary" onclick="clearForm()"><i class="fas fa-eraser"></i> Clear</button>
+        </div>
+        <!-- Form Row -->
+        <div class="form-row">
+            <!-- Code Input -->
+            <div class="col">
+                <input type="text" class="form-control" placeholder="Code">
+            </div>
+            <!-- Search Button -->
+            <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-2"> <i class="fas fa-search"></i> Search</button>
+            </div>
+        </div>
+
+        <!-- Revision Selects and Checkboxes Row -->
+        <div class="form-row align-items-center mt-3">
+            <div class="col">
+                <select class="custom-select mr-sm-2">
+                    <option selected>Documents...</option>
+                    <!-- Options  -->
+                </select>
+            </div>
+            <div class="col">
+                <select class="custom-select mr-sm-2">
+                    <option selected>Revisiones...</option>
+                    <!-- Options -->
+                </select>
+            </div>
+            <div class="col-auto">
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="includeRTFiles">
+                    <label class="custom-control-label" for="includeRTFiles">Include RT files</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="custom-control custom-checkbox mb-2">
+                    <input type="checkbox" class="custom-control-input" id="includeHolderFiles">
+                    <label class="custom-control-label" for="includeHolderFiles">Include Holder files</label>
+                </div>
+            </div>
+        </div>
+
+        <!-- Button Row -->
+        <div class="form-row align-items-center mt-3">
+            <div class="col-auto">
+                <button type="button" class="btn btn-outline-secondary"> <i class="fas fa-file-medical"></i> Create file</button>
+            </div>
+        </div>
+
+        <!-- Textarea Row -->
+        <div class="form-row align-items-center mt-3">
+            <div class="col">
+                <textarea class="form-control" placeholder="History" rows="5"></textarea>
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to Bootstrap JS and Popper.js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script>
+        function clearForm() {
+            // Clear all input fields
+            document.querySelectorAll('input[type="text"], textarea').forEach(element => element.value = '');
+            // Reset all select elements to their first option
+            document.querySelectorAll('select').forEach(element => element.selectedIndex = 0);
+            // Uncheck all checkboxes
+            document.querySelectorAll('input[type="checkbox"]').forEach(element => element.checked = false);
+        }
+    </script>
+
+</div>

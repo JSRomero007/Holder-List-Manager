@@ -1,0 +1,66 @@
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+.navbar-collapse {
+    margin-right: 110px; /* Añade un margen derecho de 30px */
+}
+.navbar .dropdown-menu .dropdown-item:hover {
+    background-color: #F84018; /* Color de fondo cuando el mouse está sobre el elemento */
+    color: white; /* Cambia el color del texto si es necesario */
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+header img {
+    margin-left: 50px; /* Añade un margen izquierdo de 30px */
+    width: 190px; /* Tamaño de la imagen, ajusta según sea necesario */
+}
+header nav {
+    text-align:right;
+    background-color: #333;
+}
+
+header button {
+    background-color: white;
+}
+header .navbar-nav .nav-link {
+    color: #FFFFFF !important;
+}
+.center-text {
+    text-align: center;
+}
+
+
+.footer, .wrapper::after {
+    height: 50px;
+}
+
+footer {
+    background: #333;
+    text-align: center;
+    height: 60px; /* Establece esto al tamaño real de tu footer */
+    width: 100%; /* El footer ocupa todo el ancho */
+    position: absolute;
+    bottom: 0; /* Coloca el foot*/
+}
+.content-wrapper {
+    padding-bottom: 60px; /* Asegúrate de que esto sea igual o más que la altura de tu footer */
+}
+
+    footer img {
+        width: 90px;
+        height: auto;
+    }

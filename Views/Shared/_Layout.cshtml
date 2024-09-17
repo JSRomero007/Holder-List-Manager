@@ -1,0 +1,110 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - HolderListManager2._0</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/HolderListManager2._0.styles.css" asp-append-version="true" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm border-bottom box-shadow mb-3">
+            <div class="container-fluid d-flex justify-content-between">
+                <!-- Imagen a la izquierda -->
+                <div>
+                    <img src="/Img/Logoblackmoderwhite.png">
+                </div>
+                <!-- Contenedor para los botones, incluido el enlace Help -->
+                <div class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Botones a la derecha -->
+                        <div class="d-flex justify-content-end" style="width: 100%;">
+                            <div>
+                                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                                        aria-expanded="false" aria-label="Toggle navigation">
+                                    <span class="navbar-toggler-icon"></span>
+                                </button>
+                                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end">
+                                    <ul class="navbar-nav flex-grow-1">
+                                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index"><i class="fa fa-home" style="color: #F84018;"></i> Home</a> </li>
+
+                                        <!-- dropdow 1 -->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-tasks " style="color: #F84018;"></i> Activities
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="center-text"><a><i class="fa fa-tasks" style="color: #F84018;"></i> Activities </a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <!-- Option Import -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Import"> <i class="fas fa-file-import"></i> Import Item and wire charts</a></li>
+                                                <!-- Option Reference -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Reference"><i class="fas fa-book"></i> Board-Harness Reference </a></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Review"><i class="fas fa-eye"></i> Review Increase </a></li>
+                                                <!-- Option Modify -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Modify"><i class="fas fa-edit"></i> Modify item list </a></li>
+                                                <!-- Option Groups -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Groups"> <i class="fas fa-users"></i> Groups </a></li>
+                                                <!-- Option Releate -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Activities" asp-action="Releate"><i class="fas fa-link"></i> Relate art. Elec-Mec </a></li>
+                                            </ul>
+                                        </li>
+                                        <!-- dropdow 2 -->
+                                        <li class="nav-item dropdown">
+                                            <a class="nav-link dropdown-toggle text-dark" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                                <i class="fa fa-tools" style="color: #F84018;"></i> Utilities
+                                            </a>
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="center-text"><a><i class="fa fa-tools" style="color: #F84018;"></i> Utilities</a></li>
+                                                <li><hr class="dropdown-divider"></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Utilities" asp-action="Review"> <i class="fas fa-search-plus"></i> Review holder lists </a></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Utilities" asp-action="Create"><i class="fas fa-plus"></i> Create tools file </a></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Utilities" asp-action="Information"><i class="fas fa-info-circle"></i> Code information </a></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Utilities" asp-action="Consult"><i class="fas fa-search"></i> Consult Harness NP </a></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Utilities" asp-action="Reference"><i class="fas fa-link"></i> Reference DVA in connectors</a></li>
+                                                <!-- Option Review -->
+                                                <li><a class="dropdown-item" asp-area="" asp-controller="Utilities" asp-action="NavSys"><i class="fas fa-map-marker-alt"></i> NavSys Stations </a></li>
+                                            </ul>
+                                        </li>
+
+                                        <li class="nav-item"><a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="#"><i class="fa fa-question-circle"></i> Help</a></li>
+                                    </ul>
+                                </div>
+
+                            </div>
+                        </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted ">
+        <div class="container">
+            <img src="/Img/Aptiv logo.png">
+            &copy; 2023 - Holder List Manager 2.0 by   <img src="/Img/ATBOLogo.png">- <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
